@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PresentViewController.swift
 //  LifeCycle
 //
 //  Created by kimjunseong on 2020/02/13.
@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class PresentViewController : UIViewController {
     override func loadView() {
         super.loadView()
         
@@ -55,12 +54,11 @@ class ViewController: UIViewController {
         
         print("\(#function)")
     }
+    
+    @IBAction func disMissButton(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
 
-    @IBAction func ButtonPressed(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let detailVC = storyBoard.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
-        
-        self.navigationController?.pushViewController(detailVC, animated: true)
     }
+    
+    
 }
-

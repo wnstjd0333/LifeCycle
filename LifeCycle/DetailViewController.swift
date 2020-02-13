@@ -54,5 +54,14 @@ class DetailViewController : UIViewController {
         
         print("\(#function)")
     }
-
+    @IBAction func popButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func presentButton(_ sender: Any) {
+        if let presentScreen = self.storyboard?.instantiateViewController(withIdentifier: "PresentViewController"){
+            presentScreen.modalTransitionStyle = .coverVertical
+            self.present(presentScreen, animated: true, completion: nil)
+        }
+    }
+    
 }
