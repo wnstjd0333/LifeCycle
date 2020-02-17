@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol MessageDelegate {
+    func clickMessage(_ message: String)
+}
+
 class DetailViewController : UIViewController {
+    
+    var messageDelegate: MessageDelegate?
+    
     override func loadView() {
         super.loadView()
         
@@ -55,8 +62,11 @@ class DetailViewController : UIViewController {
         print("\(#function)")
     }
     @IBAction func popButton(_ sender: Any) {
+        let message = "눌러졌어요!"
+        messageDelegate?.clickMessage(message)
         self.navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func presentButton(_ sender: Any) {
         if let presentScreen = self.storyboard?.instantiateViewController(withIdentifier: "PresentViewController"){
             presentScreen.modalTransitionStyle = .coverVertical
@@ -65,3 +75,4 @@ class DetailViewController : UIViewController {
     }
     
 }
+

@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    
     override func loadView() {
         super.loadView()
         
@@ -59,8 +61,13 @@ class ViewController: UIViewController {
     @IBAction func ButtonPressed(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let detailVC = storyBoard.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
-        
+        detailVC.messageDelegate = self
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
+extension ViewController: MessageDelegate{
+    func clickMessage(_ message: String) {
+        label.text = message
+    }
+}

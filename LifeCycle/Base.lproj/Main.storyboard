@@ -23,15 +23,28 @@
                                     <action selector="ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iry-bs-O1f"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="클릭 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrD-jX-eyX">
+                                <rect key="frame" x="148.5" y="237" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ehA-Il-Vje" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6Hv-o6-n5d"/>
+                            <constraint firstItem="ehA-Il-Vje" firstAttribute="top" secondItem="lrD-jX-eyX" secondAttribute="bottom" constant="57.5" id="BtA-0C-H6t"/>
                             <constraint firstItem="ehA-Il-Vje" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kaa-9B-BOG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lrD-jX-eyX" secondAttribute="trailing" constant="148.5" id="TtH-S9-Kdd"/>
+                            <constraint firstItem="lrD-jX-eyX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="148.5" id="mQP-gc-smF"/>
+                            <constraint firstItem="lrD-jX-eyX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="no9-Xz-nLS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="17T-L1-r7e"/>
+                    <connections>
+                        <outlet property="label" destination="lrD-jX-eyX" id="MSO-wn-Qsy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
